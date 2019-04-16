@@ -19,5 +19,5 @@ from api import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/v1/auth/$', views.AuthView.as_view()),
+    url(r'^api/v1/auth$', views.AuthView.as_view()),
 ]

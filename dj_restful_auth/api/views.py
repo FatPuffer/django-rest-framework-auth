@@ -22,18 +22,14 @@ class AuthView(APIView):
             user = request._request.POST.get('username')
             pwd = request._request.POST.get('password')
             obj = UserInfo.objects.filter(username=user, password=pwd).first()
-            print(obj)
             if not obj:
                 ret['code'] = 1001
                 ret['msg'] = '用户名或密码错误'
 
             # 为登录用户创建token
             token = md5(user)
-            print(token)
             # 存在就更新，不存在则创建
-            print(token)
             UserToken.objects.update_or_create(user=obj, defaults={'token': token})
-            print(123)
         except Exception as e:
             pass
 

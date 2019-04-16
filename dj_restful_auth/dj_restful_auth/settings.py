@@ -120,3 +120,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    # 全局认证配置
+    "DEFAULT_AUTHENTICATION_CLASSES": ['api.utils.auth.FirstAuthtication', 'api.utils.auth.Authtication'],
+    # 当用户认证失败时，返回的信息，默认返回匿名用户（）
+    "UNAUTHENTICATED_USER": None,  # 匿名，request.user = None
+    "UNAUTHENTICATED_TOKEN": None,  # 匿名，request.auth = None
+}

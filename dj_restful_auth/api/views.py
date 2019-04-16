@@ -36,6 +36,9 @@ class AuthView(APIView):
     """
     用户登录认证
     """
+    # 不需要认证的视图进行如下配置，覆盖全局认证即可
+    authentication_classes = []
+
     def post(self, request, *args, **kwargs):
         ret = {'code': 1000, 'msg': None}
         try:
@@ -56,24 +59,23 @@ class AuthView(APIView):
         return JsonResponse(ret)
 
 
-class Authtication(object):
-    def authenticate(self, request):
-        token = request._request.GET.get('token')
-        token_obj = UserToken.objects.filter(token=token).first()
-        if not token_obj:
-            raise exceptions.AuthenticationFailed('用户认证失败')
-        # 在rest framework内部会将整个两个字段赋值给request,以供认证操作使用
-        return (token_obj.user, token_obj)
-
-    def authenticate_header(self, request):
-        pass
+# class Authtication(object):
+#     def authenticate(self, request):
+#         token = request._request.GET.get('token')
+#         token_obj = UserToken.objects.filter(token=token).first()
+#         if not token_obj:
+#             raise exceptions.AuthenticationFailed('用户认证失败')
+#         # 在rest framework内部会将整个两个字段赋值给request,以供认证操作使用
+#         return (token_obj.user, token_obj)
+#
+#     def authenticate_header(self, request):
+#         pass
 
 
 class OrderView(APIView):
     """
     订单相关业务
     """
-    authentication_classes = [Authtication,]
 
     def get(self, request, *args, **kwargs):
         # Todo: request.user 拿到的就是token_obj.user
@@ -88,3 +90,14 @@ class OrderView(APIView):
         except Exception as e:
             pass
         return JsonResponse(ret)
+
+
+class UserInfoView(APIView):
+    """
+    个人中心
+    """
+
+    def get(self, request, *args, **kwargs):
+        print(request.user)
+        return HttpResponse('用户信息')
+

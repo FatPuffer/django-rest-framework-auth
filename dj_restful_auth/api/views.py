@@ -1,7 +1,7 @@
 from django.http import JsonResponse, HttpResponse
 from rest_framework .views import APIView
 from api.models import UserInfo, UserToken
-# from api.utils.permision import MyPermission, MyPermission1
+from api.utils.permision import MyPermission, SVIPPermission
 
 ORDER_DICT = {
     1:{
@@ -77,6 +77,7 @@ class OrderView(APIView):
     """
     订单相关业务（SVIP才有权限查看）
     """
+    permission_classes = [SVIPPermission,]
 
     def get(self, request, *args, **kwargs):
         # Todo: request.user 拿到的就是token_obj.user
@@ -97,7 +98,7 @@ class UserInfoView(APIView):
     """
     个人中心（普通用户、VIP用户有权限）
     """
-    permission_classes = [MyPermission1,]
+    permission_classes = [MyPermission,]
 
     def get(self, request, *args, **kwargs):
         print(request.user)

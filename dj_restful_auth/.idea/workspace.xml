@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e26aba32-43d6-47ce-8cd7-9d9aae4bfe99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/utils/permision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dj_restful_auth/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dj_restful_auth/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dj_restful_auth/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/dj_restful_auth/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,12 +68,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cell" value="73" />
-          <entry key="py" value="1396" />
+          <entry key="py" value="1504" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1396" />
+          <entry key="Python" value="1504" />
           <entry key="Scratch" value="73" />
         </counts>
       </usages-collector>
@@ -113,29 +111,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="98" column="41" lean-forward="true" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
+            <state relative-caret-position="330">
+              <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
               <folding>
-                <element signature="e#1#51#0" expanded="true" />
+                <element signature="e#0#50#0" expanded="true" />
                 <element signature="e#172#182#0" />
                 <element signature="e#179#361#0" />
-                <marker date="1555396942277" expanded="true" signature="621:624" ph="..." />
-                <marker date="1555396942277" expanded="true" signature="1446:1863" ph="..." />
-                <marker date="1555396942277" expanded="true" signature="1888:1893" ph="..." />
-                <marker date="1555396942277" expanded="true" signature="2432:2437" ph="..." />
+                <marker date="1555397579475" expanded="true" signature="623:626" ph="..." />
+                <marker date="1555397579475" expanded="true" signature="1501:1918" ph="..." />
+                <marker date="1555397579475" expanded="true" signature="1943:1948" ph="..." />
+                <marker date="1555397579475" expanded="true" signature="2445:2450" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/utils/permision.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+            <state>
+              <caret column="18" selection-start-column="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -143,8 +141,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dj_restful_auth/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="119" column="53" lean-forward="true" selection-start-line="119" selection-start-column="53" selection-end-line="119" selection-end-column="53" />
+            <state relative-caret-position="499">
+              <caret line="127" column="59" selection-start-line="127" selection-start-column="59" selection-end-line="127" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -152,8 +150,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/utils/auth.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="390">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
                 <marker date="1555384265645" expanded="true" signature="247:266" ph="..." />
@@ -194,10 +192,10 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/api/models.py" />
         <option value="$USER_HOME$/.virtualenvs/django/lib/python3.5/site-packages/rest_framework/views.py" />
-        <option value="$PROJECT_DIR$/dj_restful_auth/settings.py" />
         <option value="$PROJECT_DIR$/api/utils/auth.py" />
         <option value="$PROJECT_DIR$/dj_restful_auth/urls.py" />
         <option value="$PROJECT_DIR$/api/utils/permision.py" />
+        <option value="$PROJECT_DIR$/dj_restful_auth/settings.py" />
         <option value="$PROJECT_DIR$/api/views.py" />
       </list>
     </option>
@@ -326,7 +324,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09168444" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09168444" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -340,7 +338,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.22258414" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.22258414" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32914045" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -383,13 +381,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dj_restful_auth/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="119" column="53" lean-forward="true" selection-start-line="119" selection-start-column="53" selection-end-line="119" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -423,8 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/utils/auth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="390">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
             <marker date="1555384265645" expanded="true" signature="247:266" ph="..." />
@@ -432,26 +423,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/views.py">
+    <entry file="file://$PROJECT_DIR$/api/utils/permision.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="98" column="41" lean-forward="true" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
-          <folding>
-            <element signature="e#1#51#0" expanded="true" />
-            <element signature="e#172#182#0" />
-            <element signature="e#179#361#0" />
-            <marker date="1555396942277" expanded="true" signature="621:624" ph="..." />
-            <marker date="1555396942277" expanded="true" signature="1446:1863" ph="..." />
-            <marker date="1555396942277" expanded="true" signature="1888:1893" ph="..." />
-            <marker date="1555396942277" expanded="true" signature="2432:2437" ph="..." />
-          </folding>
+        <state>
+          <caret column="18" selection-start-column="6" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/utils/permision.py">
+    <entry file="file://$PROJECT_DIR$/dj_restful_auth/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        <state relative-caret-position="499">
+          <caret line="127" column="59" selection-start-line="127" selection-start-column="59" selection-end-line="127" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#172#182#0" />
+            <element signature="e#179#361#0" />
+            <marker date="1555397579475" expanded="true" signature="623:626" ph="..." />
+            <marker date="1555397579475" expanded="true" signature="1501:1918" ph="..." />
+            <marker date="1555397579475" expanded="true" signature="1943:1948" ph="..." />
+            <marker date="1555397579475" expanded="true" signature="2445:2450" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

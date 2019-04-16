@@ -1,7 +1,7 @@
 from django.http import JsonResponse, HttpResponse
 from rest_framework .views import APIView
 from api.models import UserInfo, UserToken
-from api.utils.permision import MyPermission, MyPermission1
+# from api.utils.permision import MyPermission, MyPermission1
 
 ORDER_DICT = {
     1:{
@@ -36,6 +36,8 @@ class AuthView(APIView):
     """
     # 不需要认证的视图进行如下配置，覆盖全局认证即可
     authentication_classes = []
+    # 不需要权限如下配置，覆盖全局配置即可
+    permission_classes = []
 
     def post(self, request, *args, **kwargs):
         ret = {'code': 1000, 'msg': None}
@@ -75,7 +77,6 @@ class OrderView(APIView):
     """
     订单相关业务（SVIP才有权限查看）
     """
-    permission_classes = [MyPermission, ]
 
     def get(self, request, *args, **kwargs):
         # Todo: request.user 拿到的就是token_obj.user

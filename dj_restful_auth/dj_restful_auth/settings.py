@@ -127,4 +127,6 @@ REST_FRAMEWORK = {
     # 当用户认证失败时，返回的信息，默认返回匿名用户（）
     "UNAUTHENTICATED_USER": None,  # 匿名，request.user = None
     "UNAUTHENTICATED_TOKEN": None,  # 匿名，request.auth = None
+    # 全局权限配置
+    "DEFAULT_PERMISION_CLASS": ['api.utils.permision.MyPermission', 'api.utils.permision.MyPermission1'],
 }

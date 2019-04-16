@@ -1,7 +1,24 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from rest_framework .views import APIView
+from rest_framework import exceptions
+from rest_framework.authentication import BaseAuthentication
 from api.models import UserInfo, UserToken
+
+ORDER_DICT = {
+    1:{
+        'name':'女朋友',
+        'age':18,
+        'gender':'女',
+        'content':'....'
+    },
+    2:{
+        'name':'男朋友',
+        'age':22,
+        'gender':'男',
+        'content':'....'
+    },
+}
 
 
 def md5(user):
@@ -16,6 +33,9 @@ def md5(user):
 
 
 class AuthView(APIView):
+    """
+    用户登录认证
+    """
     def post(self, request, *args, **kwargs):
         ret = {'code': 1000, 'msg': None}
         try:
@@ -33,4 +53,38 @@ class AuthView(APIView):
         except Exception as e:
             pass
 
+        return JsonResponse(ret)
+
+
+class Authtication(object):
+    def authenticate(self, request):
+        token = request._request.GET.get('token')
+        token_obj = UserToken.objects.filter(token=token).first()
+        if not token_obj:
+            raise exceptions.AuthenticationFailed('用户认证失败')
+        # 在rest framework内部会将整个两个字段赋值给request,以供认证操作使用
+        return (token_obj.user, token_obj)
+
+    def authenticate_header(self, request):
+        pass
+
+
+class OrderView(APIView):
+    """
+    订单相关业务
+    """
+    authentication_classes = [Authtication,]
+
+    def get(self, request, *args, **kwargs):
+        # Todo: request.user 拿到的就是token_obj.user
+        # Todo: request.auth 拿到的就是token_obj
+        # token = request._request.GET.get('token')
+        # if not token:
+        #     return HttpResponse('用户未登录')
+
+        ret = {'code': 1000, 'msg': None}
+        try:
+            ret['data'] = ORDER_DICT
+        except Exception as e:
+            pass
         return JsonResponse(ret)

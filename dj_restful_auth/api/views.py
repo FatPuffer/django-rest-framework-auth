@@ -1,9 +1,7 @@
-from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 from rest_framework .views import APIView
-from rest_framework import exceptions
-from rest_framework.authentication import BaseAuthentication
 from api.models import UserInfo, UserToken
+from api.utils.permision import MyPermission, MyPermission1
 
 ORDER_DICT = {
     1:{
@@ -51,6 +49,7 @@ class AuthView(APIView):
 
             # 为登录用户创建token
             token = md5(user)
+            ret['token'] = token
             # 存在就更新，不存在则创建
             UserToken.objects.update_or_create(user=obj, defaults={'token': token})
         except Exception as e:
@@ -74,8 +73,9 @@ class AuthView(APIView):
 
 class OrderView(APIView):
     """
-    订单相关业务
+    订单相关业务（SVIP才有权限查看）
     """
+    permission_classes = [MyPermission, ]
 
     def get(self, request, *args, **kwargs):
         # Todo: request.user 拿到的就是token_obj.user
@@ -94,8 +94,9 @@ class OrderView(APIView):
 
 class UserInfoView(APIView):
     """
-    个人中心
+    个人中心（普通用户、VIP用户有权限）
     """
+    permission_classes = [MyPermission1,]
 
     def get(self, request, *args, **kwargs):
         print(request.user)

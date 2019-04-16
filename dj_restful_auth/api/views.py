@@ -29,6 +29,7 @@ class AuthView(APIView):
 
             # 为登录用户创建token
             token = md5(user)
+            print(token)
             # 存在就更新，不存在则创建
             print(token)
             UserToken.objects.update_or_create(user=obj, defaults={'token': token})

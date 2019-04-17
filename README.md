@@ -102,4 +102,39 @@
       
 # 3. 节流（频率限制）
 
+  ## 1. 局部使用
+  
+      a：创建节流管理类（可以有多个）
 
+            class VisitThrottle(SimpleRateThrottle):
+                """游客60s内只能访问3次"""
+                scope = 'Fatpuffer'
+
+                def get_cache_key(self, request, view):
+                    return self.get_ident(request)
+
+
+            class UserThrottle(SimpleRateThrottle):
+                """登录用户60s内只能访问10次"""
+                scope = 'AutienticateUser'
+
+                def get_cache_key(self, request, view):
+                    return request.user.username
+                 
+       b：在视图类中使用
+
+            throttle_classes = [VisitThrottle,]
+
+  ## 1. 全局使用
+      
+      REST_FRAMEWORK = {
+        
+        # 全局节流（访问频率限制）配置
+        
+        "DEFAULT_THROTTLE_RATES": {
+        # s秒  m分  h时  d天
+        "Fatpuffer": '3/m',  # 游客每分钟访可问3次，根据ip限制
+        "AutienticateUser": '10/m'  # 登录用户每分钟可访问10次，根据用户名限制
+      }
+        
+      

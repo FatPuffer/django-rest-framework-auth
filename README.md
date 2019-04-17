@@ -69,7 +69,7 @@
           
 # 2. 权限 
   
-  ## 1. 基本使用
+  ## 基本使用
   
       a：创建权限管理类（可以有多个）
 
@@ -89,7 +89,7 @@
          
             permission_classes = [MyPermission,]
 
-  ## 1. 全局使用
+  ## 全局使用
       
       REST_FRAMEWORK = {
         
@@ -102,7 +102,7 @@
       
 # 3. 节流（频率限制）
 
-  ## 1. 局部使用
+  ## 局部使用
   
       a：创建节流管理类（可以有多个）
 
@@ -125,7 +125,7 @@
 
             throttle_classes = [VisitThrottle,]
 
-  ## 1. 全局使用
+  ## 全局使用
       
       REST_FRAMEWORK = {
         

@@ -38,6 +38,10 @@ VISIT_RECORD = {}
 
 class VisitThrottle(object):
     """60s内只能访问3次"""
+
+    def __init__(self):
+        self.history = None
+
     def allow_request(self, request, view):
         # 1.获取用户IP
         remote_addr = request.META.get('REMOTE_ADDR')
@@ -50,6 +54,7 @@ class VisitThrottle(object):
 
         # 获取历史访问记录列表
         history = VISIT_RECORD.get(remote_addr)
+        self.history = history
 
         # 如果当前时间减去60s还大于我们访问记录中的最早的数据，说明该数据是在距离60秒前的数据，则将其删除
         # 同时将最新的时间数据插入在列表最左侧
@@ -66,7 +71,11 @@ class VisitThrottle(object):
             return False  # 表示访问频率过高，被限制
 
     def wait(self):
-        pass
+        # 可以实现用户界面提示，提示用户还需要等待多久才能继续访问
+        ctime = time.time()
+        # 获取剩余限制时间
+        last_time = 60 - (ctime - self.history[-1])
+        return last_time
 
 
 class AuthView(APIView):
@@ -77,7 +86,7 @@ class AuthView(APIView):
     authentication_classes = []
     # 不需要权限如下配置，覆盖全局配置即可
     permission_classes = []
-
+    # 访问频率限制
     throttle_classes = [VisitThrottle,]
 
     def post(self, request, *args, **kwargs):

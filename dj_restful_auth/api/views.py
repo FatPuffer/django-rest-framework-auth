@@ -30,6 +30,45 @@ def md5(user):
     return m.hexdigest()
 
 
+from rest_framework.throttling import BaseThrottle
+import time
+
+VISIT_RECORD = {}
+
+
+class VisitThrottle(object):
+    """60s内只能访问3次"""
+    def allow_request(self, request, view):
+        # 1.获取用户IP
+        remote_addr = request.META.get('REMOTE_ADDR')
+        # 获取当前时间
+        ctime = time.time()
+        if remote_addr not in VISIT_RECORD:
+            # 利用时间记录访问次数
+            VISIT_RECORD[remote_addr] = [ctime,]
+            return True
+
+        # 获取历史访问记录列表
+        history = VISIT_RECORD.get(remote_addr)
+
+        # 如果当前时间减去60s还大于我们访问记录中的最早的数据，说明该数据是在距离60秒前的数据，则将其删除
+        # 同时将最新的时间数据插入在列表最左侧
+        # 此处目的：控制列表仅保留60s以内的数据
+        while history and history[-1] < ctime - 60:
+            # 删除60s以外的数据
+            history.pop()
+
+        # 如果列表长度小于3，则将新的访问数据加入列表
+        if len(history) < 3:
+            history.insert(0, ctime)
+            return True  # 表示可以继续访问
+        else:
+            return False  # 表示访问频率过高，被限制
+
+    def wait(self):
+        pass
+
+
 class AuthView(APIView):
     """
     用户登录认证
@@ -38,6 +77,8 @@ class AuthView(APIView):
     authentication_classes = []
     # 不需要权限如下配置，覆盖全局配置即可
     permission_classes = []
+
+    throttle_classes = [VisitThrottle,]
 
     def post(self, request, *args, **kwargs):
         ret = {'code': 1000, 'msg': None}

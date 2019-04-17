@@ -1,20 +1,20 @@
 from django.http import JsonResponse, HttpResponse
 from rest_framework .views import APIView
 from api.models import UserInfo, UserToken
-from api.utils.permision import MyPermission, SVIPPermission
+from api.utils.permision import MyPermission
 
 ORDER_DICT = {
-    1:{
-        'name':'女朋友',
-        'age':18,
-        'gender':'女',
-        'content':'....'
+    1: {
+        'name': '女朋友',
+        'age': 18,
+        'gender': '女',
+        'content': '....'
     },
-    2:{
-        'name':'男朋友',
-        'age':22,
-        'gender':'男',
-        'content':'....'
+    2: {
+        'name': '男朋友',
+        'age': 22,
+        'gender': '男',
+        'content': '....'
     },
 }
 
@@ -77,8 +77,6 @@ class OrderView(APIView):
     """
     订单相关业务（SVIP才有权限查看）
     """
-    permission_classes = [SVIPPermission,]
-
     def get(self, request, *args, **kwargs):
         # Todo: request.user 拿到的就是token_obj.user
         # Todo: request.auth 拿到的就是token_obj
@@ -98,9 +96,11 @@ class UserInfoView(APIView):
     """
     个人中心（普通用户、VIP用户有权限）
     """
+    # 使用该权限覆盖全局权限
     permission_classes = [MyPermission,]
 
     def get(self, request, *args, **kwargs):
+        self.dispatch()
         print(request.user)
         return HttpResponse('用户信息')
 

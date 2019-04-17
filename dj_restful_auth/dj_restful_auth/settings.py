@@ -128,5 +128,5 @@ REST_FRAMEWORK = {
     "UNAUTHENTICATED_USER": None,  # 匿名，request.user = None
     "UNAUTHENTICATED_TOKEN": None,  # 匿名，request.auth = None
     # 全局权限配置
-    "DEFAULT_PERMISION_CLASSES": ['api.utils.permision.SVIPPermission', 'api.utils.permision.MyPermission'],
+    "DEFAULT_PERMISSION_CLASSES": ['api.utils.permision.SVIPPermission',],
 }

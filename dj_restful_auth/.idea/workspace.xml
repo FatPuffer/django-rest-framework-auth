@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e26aba32-43d6-47ce-8cd7-9d9aae4bfe99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api/utils/throttle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dj_restful_auth/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/dj_restful_auth/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,25 +59,25 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="api_userinfo" value="4" />
-          <entry key="api_usertoken" value="3" />
-          <entry key="py" value="11" />
+          <entry key="api_usertoken" value="4" />
+          <entry key="py" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Database Element" value="7" />
-          <entry key="Python" value="11" />
+          <entry key="Database Element" value="8" />
+          <entry key="Python" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cell" value="73" />
-          <entry key="py" value="2560" />
+          <entry key="py" value="2918" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2560" />
+          <entry key="Python" value="2918" />
           <entry key="Scratch" value="73" />
         </counts>
       </usages-collector>
@@ -86,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dj_restful_auth/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="409">
+              <caret line="23" column="23" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="23" />
               <folding>
                 <element signature="e#649#681#0" expanded="true" />
               </folding>
@@ -95,27 +97,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-                <marker date="1555484467066" expanded="true" signature="616:1814" ph="..." />
-                <marker date="1555484467066" expanded="true" signature="731:1814" ph="..." />
-                <marker date="1555484467066" expanded="true" signature="777:811" ph="..." />
-                <marker date="1555484467066" expanded="true" signature="1648:1657" ph="..." />
-              </folding>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://701d5f7f-a84d-4027-96d3-897343930738/schema/main/table/api_usertoken">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/ENVS/django/Lib/site-packages/rest_framework/throttling.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
+            <state relative-caret-position="480">
+              <caret line="154" column="25" lean-forward="true" selection-start-line="154" selection-start-column="25" selection-end-line="154" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+                <marker date="1555487205630" expanded="true" signature="661:1942" ph="..." />
+                <marker date="1555487205630" expanded="true" signature="787:1942" ph="..." />
+                <marker date="1555487205630" expanded="true" signature="838:877" ph="..." />
+                <marker date="1555487205630" expanded="true" signature="1766:1777" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,8 +134,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dj_restful_auth/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+            <state relative-caret-position="305">
+              <caret line="133" column="31" lean-forward="true" selection-start-line="133" selection-start-column="31" selection-end-line="133" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/utils/throttle.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="56" column="18" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/ENVS/django/Lib/site-packages/rest_framework/throttling.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+              <folding>
+                <element signature="e#293#1472#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,6 +188,7 @@
         <option value="$PROJECT_DIR$/api/utils/auth.py" />
         <option value="$PROJECT_DIR$/dj_restful_auth/urls.py" />
         <option value="$PROJECT_DIR$/api/utils/permision.py" />
+        <option value="$PROJECT_DIR$/api/utils/throttle.py" />
         <option value="$PROJECT_DIR$/dj_restful_auth/settings.py" />
         <option value="$PROJECT_DIR$/api/views.py" />
       </list>
@@ -177,7 +201,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-221" />
+    <option name="x" value="64" />
+    <option name="y" value="21" />
     <option name="width" value="1170" />
     <option name="height" value="1041" />
   </component>
@@ -281,7 +306,7 @@
     <option name="totallyTimeSpent" value="9953000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-221" y="0" width="1170" height="1041" extended-state="0" />
+    <frame x="64" y="21" width="1170" height="1041" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14324324" />
@@ -341,16 +366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dj_restful_auth/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="e#649#681#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/ENVS/django/Lib/site-packages/rest_framework/permissions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
@@ -364,13 +379,6 @@
             <element signature="e#6919#7068#0" />
             <element signature="e#7130#9198#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ENVS/django/Lib/site-packages/rest_framework/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="336" column="17" lean-forward="true" selection-start-line="336" selection-start-column="17" selection-end-line="336" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -406,13 +414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://701d5f7f-a84d-4027-96d3-897343930738/schema/main/table/api_usertoken">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/utils/permision.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -420,30 +421,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dj_restful_auth/settings.py">
+    <entry file="file://C:/ENVS/django/Lib/site-packages/rest_framework/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+        <state relative-caret-position="4296">
+          <caret line="285" column="30" selection-start-line="285" selection-start-column="30" selection-end-line="285" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://C:/ENVS/django/Lib/site-packages/rest_framework/throttling.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
+        <state relative-caret-position="210">
+          <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+          <folding>
+            <element signature="e#293#1472#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/utils/throttle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="56" column="18" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dj_restful_auth/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="133" column="31" lean-forward="true" selection-start-line="133" selection-start-column="31" selection-end-line="133" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dj_restful_auth/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="23" />
+          <folding>
+            <element signature="e#649#681#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://701d5f7f-a84d-4027-96d3-897343930738/schema/main/table/api_usertoken">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
+        <state relative-caret-position="480">
+          <caret line="154" column="25" lean-forward="true" selection-start-line="154" selection-start-column="25" selection-end-line="154" selection-end-column="25" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
-            <marker date="1555484467066" expanded="true" signature="616:1814" ph="..." />
-            <marker date="1555484467066" expanded="true" signature="731:1814" ph="..." />
-            <marker date="1555484467066" expanded="true" signature="777:811" ph="..." />
-            <marker date="1555484467066" expanded="true" signature="1648:1657" ph="..." />
+            <marker date="1555487205630" expanded="true" signature="661:1942" ph="..." />
+            <marker date="1555487205630" expanded="true" signature="787:1942" ph="..." />
+            <marker date="1555487205630" expanded="true" signature="838:877" ph="..." />
+            <marker date="1555487205630" expanded="true" signature="1766:1777" ph="..." />
           </folding>
         </state>
       </provider>

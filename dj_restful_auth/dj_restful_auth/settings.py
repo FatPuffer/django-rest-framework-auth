@@ -129,4 +129,11 @@ REST_FRAMEWORK = {
     "UNAUTHENTICATED_TOKEN": None,  # 匿名，request.auth = None
     # 全局权限配置
     "DEFAULT_PERMISSION_CLASSES": ['api.utils.permision.SVIPPermission',],
+    # 全局节流（访问频率限制）配置
+    "DEFAULT_THROTTLE_CLASSES": ['api.utils.throttle.UserThrottle',],
+    "DEFAULT_THROTTLE_RATES": {
+        # s秒  m分  h时  d天
+        "Fatpuffer": '3/m',  # 游客每分钟访可问3次，根据ip限制
+        "AutienticateUser": '10/m'  # 登录用户每分钟可访问10次，根据用户名限制
+    }
 }

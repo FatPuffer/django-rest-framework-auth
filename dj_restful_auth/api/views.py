@@ -2,6 +2,7 @@ from django.http import JsonResponse, HttpResponse
 from rest_framework .views import APIView
 from api.models import UserInfo, UserToken
 from api.utils.permision import MyPermission
+from api.utils.throttle import VisitThrottle
 
 ORDER_DICT = {
     1: {
@@ -30,52 +31,52 @@ def md5(user):
     return m.hexdigest()
 
 
-from rest_framework.throttling import BaseThrottle
-import time
-
-VISIT_RECORD = {}
-
-
-class VisitThrottle(object):
-    """60s内只能访问3次"""
-
-    def __init__(self):
-        self.history = None
-
-    def allow_request(self, request, view):
-        # 1.获取用户IP
-        remote_addr = request.META.get('REMOTE_ADDR')
-        # 获取当前时间
-        ctime = time.time()
-        if remote_addr not in VISIT_RECORD:
-            # 利用时间记录访问次数
-            VISIT_RECORD[remote_addr] = [ctime,]
-            return True
-
-        # 获取历史访问记录列表
-        history = VISIT_RECORD.get(remote_addr)
-        self.history = history
-
-        # 如果当前时间减去60s还大于我们访问记录中的最早的数据，说明该数据是在距离60秒前的数据，则将其删除
-        # 同时将最新的时间数据插入在列表最左侧
-        # 此处目的：控制列表仅保留60s以内的数据
-        while history and history[-1] < ctime - 60:
-            # 删除60s以外的数据
-            history.pop()
-
-        # 如果列表长度小于3，则将新的访问数据加入列表
-        if len(history) < 3:
-            history.insert(0, ctime)
-            return True  # 表示可以继续访问
-        else:
-            return False  # 表示访问频率过高，被限制
-
-    def wait(self):
-        # 可以实现用户界面提示，提示用户还需要等待多久才能继续访问
-        ctime = time.time()
-        # 获取剩余限制时间
-        last_time = 60 - (ctime - self.history[-1])
-        return last_time
+# from rest_framework.throttling import BaseThrottle
+# import time
+#
+# VISIT_RECORD = {}
+#
+#
+# class VisitThrottle(object):
+#     """60s内只能访问3次"""
+#
+#     def __init__(self):
+#         self.history = None
+#
+#     def allow_request(self, request, view):
+#         # 1.获取用户IP
+#         remote_addr = request.META.get('REMOTE_ADDR')
+#         # 获取当前时间
+#         ctime = time.time()
+#         if remote_addr not in VISIT_RECORD:
+#             # 利用时间记录访问次数
+#             VISIT_RECORD[remote_addr] = [ctime,]
+#             return True
+#
+#         # 获取历史访问记录列表
+#         history = VISIT_RECORD.get(remote_addr)
+#         self.history = history
+#
+#         # 如果当前时间减去60s还大于我们访问记录中的最早的数据，说明该数据是在距离60秒前的数据，则将其删除
+#         # 同时将最新的时间数据插入在列表最左侧
+#         # 此处目的：控制列表仅保留60s以内的数据
+#         while history and history[-1] < ctime - 60:
+#             # 删除60s以外的数据
+#             history.pop()
+#
+#         # 如果列表长度小于3，则将新的访问数据加入列表
+#         if len(history) < 3:
+#             history.insert(0, ctime)
+#             return True  # 表示可以继续访问
+#         else:
+#             return False  # 表示访问频率过高，被限制
+#
+#     def wait(self):
+#         # 可以实现用户界面提示，提示用户还需要等待多久才能继续访问
+#         ctime = time.time()
+#         # 获取剩余限制时间
+#         last_time = 60 - (ctime - self.history[-1])
+#         return last_time
 
 
 class AuthView(APIView):
@@ -86,7 +87,7 @@ class AuthView(APIView):
     authentication_classes = []
     # 不需要权限如下配置，覆盖全局配置即可
     permission_classes = []
-    # 访问频率限制
+    # 未登录用户遵循该节流模式
     throttle_classes = [VisitThrottle,]
 
     def post(self, request, *args, **kwargs):
@@ -150,7 +151,7 @@ class UserInfoView(APIView):
     permission_classes = [MyPermission,]
 
     def get(self, request, *args, **kwargs):
-        self.dispatch()
+        # self.dispatch()
         print(request.user)
         return HttpResponse('用户信息')
 
